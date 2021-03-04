@@ -1,0 +1,34 @@
+{
+  "name": "secure-storage-web",
+  "version": "0.0.1",
+  "description": "Secure storage for web applications",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajeshwarpatlolla/secure-storage-web.git"
+  },
+  "keywords": [
+    "web",
+    "storage",
+    "secure storage",
+    "secure storage web"
+  ],
+  "author": "rajeshwar.patlolla@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rajeshwarpatlolla/secure-storage-web/issues"
+  },
+  "homepage": "https://github.com/rajeshwarpatlolla/secure-storage-web#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  },
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^5.24.3",
+    "webpack-cli": "^4.5.0"
+  }
+}
