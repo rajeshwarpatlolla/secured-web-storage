@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "secure-storage-web": "0.0.1"
+    "secure-storage-web": "0.0.2"
   }
 }
