@@ -10,20 +10,26 @@
 
 ## Installation
 
-```
+```javascript
 npm install secure-storage-web --save
+```
+
+or
+
+```javascript
+yarn add secure-storage-web --save
 ```
 
 ## Usage
 
 ### In Web application
 In side `index.html`
-````
+```javascript
 <script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
 ````
 
 In `js` file where you want to use this package
-````
+```javascript
 var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey: 'test' });
 
 store.setItem('key1', { a: 12345 });
@@ -33,7 +39,7 @@ store.setItem('key2', { a: 6789 });
 
 In your `main.js` file
 
-```
+```javascript
 import SecureStorageWeb from 'secure-storage-web';
 
 var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey: 'test', secure: true });
@@ -42,7 +48,7 @@ Vue.prototype.store = store;
 
 In `components` where you want to use this package
 
-```
+```javascript
 this.store.setItem('key1', { a: 12345 });
 
 this.store.setItem('key2', { a: 6789 });
