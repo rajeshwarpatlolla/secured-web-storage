@@ -16,7 +16,7 @@ npm install secure-storage-web --save
 
 ### Usage
 
-##### In Web application
+#### In Web application
 In side `index.html`
 ````
 <script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
@@ -29,7 +29,7 @@ var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey
 store.setItem('key1', { a: 12345 });
 store.setItem('key2', { a: 6789 });
 ````
-##### In Vue application
+#### In Vue application
 
 In your `main.js` file
 
@@ -55,14 +55,14 @@ You can find npm registry link [here](https://www.npmjs.com/package/secure-web-s
 [MIT](https://github.com/rajeshwarpatlolla/secure-storage-web/blob/master/LICENSE.md)
 
 ## Release Notes
-###v0.0.1
+### v0.0.1
 - Initial version with basic storage with encryption and decryption
 
-###v0.0.2
+### v0.0.2
 - Initial version with basic storage with encryption and decryption
 - Added demo for web application
 
-###v0.0.3
+### v0.0.3
 - Added optional feature to enable or disabled encryption and decryption
 - Added vue.js app demo
 
