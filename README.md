@@ -72,6 +72,9 @@ You can find npm registry link [here](https://www.npmjs.com/package/secure-web-s
 - Added optional feature to enable or disabled encryption and decryption
 - Added vue.js app demo
 
+### v0.1.0
+- Stable version release
+
 ## Contact
 
 - Gmail : rajeshwar.patlolla@gmail.com
