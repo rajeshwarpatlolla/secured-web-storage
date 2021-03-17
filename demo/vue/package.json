@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "secure-storage-web": "0.0.2",
+    "secure-storage-web": "0.0.3",
     "vue": "^2.6.11"
   },
   "devDependencies": {

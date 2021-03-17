@@ -8,7 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "secure-storage-web": "0.0.2"
+  "devDependencies": {},
+  "dependencies": {
+    "secure-storage-web": "0.0.3"
   }
 }
