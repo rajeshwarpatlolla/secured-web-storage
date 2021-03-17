@@ -48,6 +48,8 @@ this.store.setItem('key1', { a: 12345 });
 this.store.setItem('key2', { a: 6789 });
 ```
 
+## npm package
+You can find npm registry link [here](https://www.npmjs.com/package/secure-web-storage)
 ## License
 
 [MIT](https://github.com/rajeshwarpatlolla/secure-storage-web/blob/master/LICENSE.md)
@@ -59,8 +61,10 @@ this.store.setItem('key2', { a: 6789 });
 ###v0.0.2
 - Initial version with basic storage with encryption and decryption
 - Added demo for web application
+
 ###v0.0.3
 - Added optional feature to enable or disabled encryption and decryption
+- Added vue.js app demo
 
 ## Contact
 
