@@ -8,15 +8,15 @@
 
 [You can see the demo here](https://rajeshwarpatlolla.github.io/secure-storage-web-demo/)
 
-### Installation
+## Installation
 
 ```
 npm install secure-storage-web --save
 ```
 
-### Usage
+## Usage
 
-#### In Web application
+### In Web application
 In side `index.html`
 ````
 <script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
@@ -29,7 +29,7 @@ var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey
 store.setItem('key1', { a: 12345 });
 store.setItem('key2', { a: 6789 });
 ````
-#### In Vue application
+### In Vue application
 
 In your `main.js` file
 
