@@ -1,16 +1,18 @@
 var CryptoJS = require('crypto-js');
 
 var config = {};
-function SecureStorageWeb({ name = 'app', type = 'localStorage', secretKey = 'SECRET_KEY' }) {
-  config = { name, type, secretKey };
+function SecureStorageWeb({ name = 'app', type = 'localStorage', secretKey = 'SECRET_KEY', secure = true }) {
+  config = { name, type, secretKey, secure };
   config.type = config.type === 'localStorage' ? localStorage : sessionStorage;
 }
 
 SecureStorageWeb.prototype.setItem = (name, value) => {
   if (typeof value === 'object') {
-    value = CryptoJS.AES.encrypt(JSON.stringify(value), config.secretKey).toString();
+    value = JSON.stringify(value);
   } else {
     value = value.toString();
+  }
+  if (config.secure) {
     value = CryptoJS.AES.encrypt(value, config.secretKey).toString();
   }
   return config.type.setItem([name], value);
@@ -18,13 +20,17 @@ SecureStorageWeb.prototype.setItem = (name, value) => {
 
 SecureStorageWeb.prototype.getItem = (name) => {
   let value = config.type.getItem([name]);
-
-  value = CryptoJS.AES.decrypt(value, config.secretKey);
-
-  if (typeof value === 'object') {
-    value = JSON.parse(value.toString(CryptoJS.enc.Utf8));
+  if (config.secure) {
+    value = CryptoJS.AES.decrypt(value, config.secretKey);
+    if (typeof value === 'object') {
+      value = JSON.parse(value.toString(CryptoJS.enc.Utf8));
+    } else {
+      value = value.toString(CryptoJS.enc.Utf8);
+    }
   } else {
-    value = value.toString(CryptoJS.enc.Utf8);
+    if (typeof value === 'object') {
+      value = JSON.parse(value);
+    }
   }
   return value;
 };
@@ -34,17 +40,27 @@ SecureStorageWeb.prototype.deleteItem = (name) => {
 };
 
 SecureStorageWeb.prototype.getAllItems = () => {
-  return Object.keys(config.type).reduce((obj, str) => {
-    obj[str] = config.type.getItem(str);
-    obj[str] = CryptoJS.AES.decrypt(obj[str], config.secretKey);
+  if (config.secure) {
+    return Object.keys(config.type).reduce((obj, str) => {
+      obj[str] = config.type.getItem(str);
+      obj[str] = CryptoJS.AES.decrypt(obj[str], config.secretKey);
 
-    if (typeof obj[str] === 'object') {
-      obj[str] = JSON.parse(obj[str].toString(CryptoJS.enc.Utf8));
-    } else {
-      obj[str] = obj[str].toString(CryptoJS.enc.Utf8);
-    }
-    return obj;
-  }, {});
+      if (typeof obj[str] === 'object') {
+        obj[str] = JSON.parse(obj[str].toString(CryptoJS.enc.Utf8));
+      } else {
+        obj[str] = obj[str].toString(CryptoJS.enc.Utf8);
+      }
+      return obj;
+    }, {});
+  } else {
+    return Object.keys(config.type).reduce((obj, str) => {
+      obj[str] = config.type.getItem(str);
+      if (typeof obj[str] === 'object') {
+        obj[str] = JSON.parse(obj[str]);
+      }
+      return obj;
+    }, {});
+  }
 };
 
 SecureStorageWeb.prototype.deleteAllItems = () => {
