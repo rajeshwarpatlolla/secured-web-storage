@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      padding: 8px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>secure-storage-web demo</h1>
+  <div>Open the browser developer tools and check the application and console tabs</div>
+  <div>
+    <button onclick="setItem()">Set Item</button>
+  </div>
+  <div>
+    <button onclick="getItem()">Get Item</button>
+  </div>
+  <div>
+    <button onclick="deleteItem()">Delete Item</button>
+  </div>
+  <div>
+    <button onclick="getAllItems()">Get All Items</button>
+  </div>
+  <div>
+    <button onclick="deleteAllItems()">Delete All Items</button>
+  </div>
+  <div>
+    <button onclick="getAllKeys()">Get All Keys</button>
+  </div>
+  <div>
+    <button onclick="getLength()">Get Length</button>
+  </div>
+
+  <script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
+  <script>
+    var store = new SecureStorageWeb({ name: 'app', type: 'localStorage', secretKey: 'test' });
+
+    function setItem() {
+      console.log(store.setItem('key', { a: 12345 }));
+    }
+
+    function getItem() {
+      console.log(store.getItem('key'));
+    }
+
+    function deleteItem() {
+      console.log(store.deleteItem('key'));
+    }
+
+    function getAllItems() {
+      console.log(store.getAllItems());
+    }
+
+    function deleteAllItems() {
+      console.log(store.deleteAllItems());
+    }
+
+    function getAllKeys() {
+      console.log(store.getAllKeys());
+    }
+
+    function getLength() {
+      console.log(store.getLength());
+    }
+  </script>
+</body>
+
+</html>
