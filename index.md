@@ -1,37 +1,118 @@
-## Welcome to GitHub Pages
+# secure-storage-web
+The data will be stored using [CryptoJS](https://github.com/brix/crypto-js) AES (Advanced Encryption Standard) encryption method
+## A secure storage for web application
 
-You can use the [editor on GitHub](https://github.com/rajeshwarpatlolla/secure-storage-web/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+![npm](https://img.shields.io/npm/v/secure-storage-web?color=brightgreen&style=plastic) ![MIT](https://img.shields.io/npm/l/secure-storage-web?color=brightgreen&style=plastic)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Demo
 
-### Markdown
+[You can see the demo here](https://rajeshwarpatlolla.github.io/secure-storage-web-demo/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Installation
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```javascript
+npm install secure-storage-web --save
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+or
 
-### Jekyll Themes
+```javascript
+yarn add secure-storage-web --save
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/rajeshwarpatlolla/secure-storage-web/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Usage
 
-### Support or Contact
+### In Web application
+In side `index.html`
+```javascript
+<script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
+````
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+In `js` file where you want to use this package
+```javascript
+var config = { name: 'test', type: 'localStorage', secretKey: 'test' };
+var store = new SecureStorageWeb(config);
+
+store.setItem('key1', { a: 12345 });
+
+store.getItem('key1');
+````
+### In Vue application
+
+In your `main.js` file
+
+```javascript
+import SecureStorageWeb from 'secure-storage-web';
+
+var config = { name: 'test', type: 'localStorage', secretKey: 'test', secure: true };
+var store = new SecureStorageWeb(config);
+
+Vue.prototype.store = store;
+```
+
+In vue.js `components` where you want to use this package
+
+```javascript
+this.store.setItem('key1', { a: 12345 });
+
+this.store.get('key1');
+```
+
+## Configuration Options
+
+Option  | Type | Default Value | Description
+------  | ---- | ------------- | -----------
+`name`    | String | app |  You can give your application name so that all your keys in browser storage will be prepended with your name of the application
+`type`    | Storage | localStorage |  You can use either localStorage or sessionStorage
+`secretKey` | String | SECRET_KEY | You can use any secret key
+`secure`  | Boolean | true |  You can enable or disable encryption / decryption with this value
+
+#### Usage of configuration options
+```javascript
+var config = { name: 'test', type: 'localStorage', secretKey: 'test', secure: true };
+var store = new SecureStorageWeb(config);
+````
+
+## Methods
+
+Method  | Syntax | Description
+------  | ------ |  -----------
+setItem | `setItem('key', value)` | Set the item in to browser storage.
+getItem | `getItem('key')` | Get the item from browser storage.
+deleteItem | `deleteItem('key')` | Delete the item from storage.
+getAllItems | `getAllItems()` | Get all the items from storage.
+deleteAllItems | `deleteAllItems()` | Delete all the items from storage.
+getAllKeys | `getAllKeys()` | Get all the keys stored.
+getLength | `getLength()` | Get the length of items stored.
+
+## npm package
+You can find npm registry link [here](https://www.npmjs.com/package/secure-web-storage)
+## License
+
+[MIT](https://github.com/rajeshwarpatlolla/secure-storage-web/blob/master/LICENSE.md)
+
+## Release Notes
+### v0.0.1
+- Initial version with basic storage with encryption and decryption
+
+### v0.0.2
+- Initial version with basic storage with encryption and decryption
+- Added demo for web application
+
+### v0.0.3
+- Added optional feature to enable or disabled encryption and decryption
+- Added vue.js app demo
+
+### v0.1.0
+- Stable version release
+
+### v0.2.0
+- Keys will be fetched based on the configuration
+- Updated Readme with configuration options and methods
+
+## Contact
+
+- Gmail : rajeshwar.patlolla@gmail.com
+- Github : https://github.com/rajeshwarpatlolla
+- Twitter : https://twitter.com/rajeshwar_9032
+- Facebook : https://www.facebook.com/rajeshwarpatlolla
