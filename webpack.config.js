@@ -9,7 +9,7 @@ module.exports = {
     // the name exported to window
     library: 'SecureStorageWeb',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'secure-storage-web.js',
+    filename: 'index.min.js',
   },
   resolve: {
     fallback: {

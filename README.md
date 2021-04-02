@@ -61,13 +61,13 @@ this.store.setItem('key2', { a: 6789 });
 - **secure** : Type `Boolean`. Default value is `true`. You can enable or disable encryption/decryption with this value.
 
 ## Methods
-- **setItem** : Set the item in to browser storage
-- **getItem** : Get the item from browser storage
-- **deleteItem** : Delete the item from storage
-- **getAllItems** : Get all the items from storage
-- **deleteAllItems** : Delete all the items from storage
-- **getAllKeys** : Get all the keys stored
-- **getLength** : Get the length of items stored
+- **setItem('key', value)** : Set the item in to browser storage.
+- **getItem('key')** : Get the item from browser storage.
+- **deleteItem('key')** : Delete the item from storage.
+- **getAllItems()** : Get all the items from storage.
+- **deleteAllItems()** : Delete all the items from storage.
+- **getAllKeys()** : Get all the keys stored.
+- **getLength()** : Get the length of items stored.
 ## npm package
 You can find npm registry link [here](https://www.npmjs.com/package/secure-web-storage)
 ## License

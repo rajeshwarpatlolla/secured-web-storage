@@ -1,8 +1,8 @@
 {
   "name": "secure-storage-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Secure storage for web applications",
-  "main": "src/index.js",
+  "main": "dist/index.min.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
