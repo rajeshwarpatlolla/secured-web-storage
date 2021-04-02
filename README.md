@@ -1,5 +1,5 @@
 # secure-storage-web
-The data will be stored using [CryptoJS](https://github.com/brix/crypto-js) AES (Advanced Encryption Standard) encryption method
+The data will be stored using [CryptoJS](https://github.com/brix/crypto-js) AES (Advanced Encryption Standard)
 ## A secure storage for web application
 
 ![npm](https://img.shields.io/npm/v/secure-storage-web?color=brightgreen&style=plastic) ![MIT](https://img.shields.io/npm/l/secure-storage-web?color=brightgreen&style=plastic)
