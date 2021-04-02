@@ -86,7 +86,7 @@ getAllKeys | `getAllKeys()` | Get all the keys stored.
 getLength | `getLength()` | Get the length of items stored.
 
 ## npm package
-You can find npm registry link [here](https://www.npmjs.com/package/secure-web-storage)
+You can find npm registry link [here](https://www.npmjs.com/package/secure-storage-web)
 ## License
 
 [MIT](https://github.com/rajeshwarpatlolla/secure-storage-web/blob/master/LICENSE.md)
