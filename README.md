@@ -54,6 +54,20 @@ this.store.setItem('key1', { a: 12345 });
 this.store.setItem('key2', { a: 6789 });
 ```
 
+## Options
+- **name** : Type `String`. Default value is `app`. You can give your application name so that all your keys in browser storage will be prepended with your name of the application.
+- **type** : Type `Storage`. Default value is `localStorage`. You can also use sessionStorage.
+- **secretKey** : Type `String`. Default value is `SECRET_KEY`. You can use any secret key.
+- **secure** : Type `Boolean`. Default value is `true`. You can enable or disable encryption/decryption with this value.
+
+## Methods
+- **setItem** : Set the item in to browser storage
+- **getItem** : Get the item from browser storage
+- **deleteItem** : Delete the item from storage
+- **getAllItems** : Get all the items from storage
+- **deleteAllItems** : Delete all the items from storage
+- **getAllKeys** : Get all the keys stored
+- **getLength** : Get the length of items stored
 ## npm package
 You can find npm registry link [here](https://www.npmjs.com/package/secure-web-storage)
 ## License
