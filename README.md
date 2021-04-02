@@ -1,5 +1,5 @@
 # secure-storage-web
-
+The data will be stored using [CryptoJS](https://github.com/brix/crypto-js) AES (Advanced Encryption Standard) encryption method
 ## A secure storage for web application
 
 ![npm](https://img.shields.io/npm/v/secure-storage-web?color=brightgreen&style=plastic) ![MIT](https://img.shields.io/npm/l/secure-storage-web?color=brightgreen&style=plastic)
@@ -30,10 +30,12 @@ In side `index.html`
 
 In `js` file where you want to use this package
 ```javascript
-var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey: 'test' });
+var config = { name: 'test', type: 'localStorage', secretKey: 'test' };
+var store = new SecureStorageWeb(config);
 
 store.setItem('key1', { a: 12345 });
-store.setItem('key2', { a: 6789 });
+
+store.getItem('key1');
 ````
 ### In Vue application
 
@@ -42,32 +44,47 @@ In your `main.js` file
 ```javascript
 import SecureStorageWeb from 'secure-storage-web';
 
-var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey: 'test', secure: true });
+var config = { name: 'test', type: 'localStorage', secretKey: 'test', secure: true };
+var store = new SecureStorageWeb(config);
+
 Vue.prototype.store = store;
 ```
 
-In `components` where you want to use this package
+In vue.js `components` where you want to use this package
 
 ```javascript
 this.store.setItem('key1', { a: 12345 });
 
-this.store.setItem('key2', { a: 6789 });
+this.store.get('key1');
 ```
 
-## Options
-- **name** : Type `String`. Default value is `app`. You can give your application name so that all your keys in browser storage will be prepended with your name of the application.
-- **type** : Type `Storage`. Default value is `localStorage`. You can also use sessionStorage.
-- **secretKey** : Type `String`. Default value is `SECRET_KEY`. You can use any secret key.
-- **secure** : Type `Boolean`. Default value is `true`. You can enable or disable encryption/decryption with this value.
+## Configuration Options
+
+Option  | Type | Default Value | Description
+------  | ---- | ------------- | -----------
+`name`    | String | app |  You can give your application name so that all your keys in browser storage will be prepended with your name of the application
+`type`    | Storage | localStorage |  You can use either localStorage or sessionStorage
+`secretKey` | String | SECRET_KEY | You can use any secret key
+`secure`  | Boolean | true |  You can enable or disable encryption / decryption with this value
+
+#### Usage of configuration options
+```javascript
+var config = { name: 'test', type: 'localStorage', secretKey: 'test', secure: true };
+var store = new SecureStorageWeb(config);
+````
 
 ## Methods
-- **setItem('key', value)** : Set the item in to browser storage.
-- **getItem('key')** : Get the item from browser storage.
-- **deleteItem('key')** : Delete the item from storage.
-- **getAllItems()** : Get all the items from storage.
-- **deleteAllItems()** : Delete all the items from storage.
-- **getAllKeys()** : Get all the keys stored.
-- **getLength()** : Get the length of items stored.
+
+Method  | Syntax | Description
+------  | ------ |  -----------
+setItem | `setItem('key', value)` | Set the item in to browser storage.
+getItem | `getItem('key')` | Get the item from browser storage.
+deleteItem | `deleteItem('key')` | Delete the item from storage.
+getAllItems | `getAllItems()` | Get all the items from storage.
+deleteAllItems | `deleteAllItems()` | Delete all the items from storage.
+getAllKeys | `getAllKeys()` | Get all the keys stored.
+getLength | `getLength()` | Get the length of items stored.
+
 ## npm package
 You can find npm registry link [here](https://www.npmjs.com/package/secure-web-storage)
 ## License
@@ -88,6 +105,10 @@ You can find npm registry link [here](https://www.npmjs.com/package/secure-web-s
 
 ### v0.1.0
 - Stable version release
+
+### v0.2.0
+- Keys will be fetched based on the configuration
+- Updated Readme with configuration options and methods
 
 ## Contact
 
