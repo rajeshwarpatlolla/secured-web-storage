@@ -6,7 +6,7 @@ The data will be stored using [CryptoJS](https://github.com/brix/crypto-js) AES 
 
 ## Demo
 
-[You can see the demo here](https://rajeshwarpatlolla.github.io/secure-storage-web-demo/)
+[You can see the demo here](https://rajeshwarpatlolla.github.io/secure-storage-web/demo/)
 
 ## Installation
 
