@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>secured-web-storage demo</h1>
-    <div>Open the browser developer tools and check the application and console tabs</div>
+    <div>Open the browser developer tools and check the Application > storage > Local Storage and console tabs</div>
     <div>
       <button @click="setItem()">Set Item</button>
     </div>

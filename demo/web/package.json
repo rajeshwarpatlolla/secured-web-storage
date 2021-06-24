@@ -10,6 +10,6 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
-    "secured-web-storage": "0.1.0"
+    "secured-web-storage": "^0.3.0"
   }
 }

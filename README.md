@@ -25,7 +25,7 @@ yarn add secured-web-storage --save
 ### In Web application
 In side `index.html`
 ```javascript
-<script src="node_modules/secured-web-storage/dist/secured-web-storage.js"></script>
+<script src="node_modules/secured-web-storage/dist/index.min.js"></script>
 ````
 
 In `js` file where you want to use this package
@@ -112,6 +112,10 @@ You can find npm registry link [here](https://www.npmjs.com/package/secured-web-
 
 ### v0.3.0
 - Pacakge name modified to secured-web-storage
+
+### v0.3.1
+- Demos updated to work with latest version of secured-web-storage
+- Script file path modified in readme.md file
 
 ## Contact
 
