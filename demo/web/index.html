@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1>secure-storage-web demo</h1>
+  <h1>secured-web-storage demo</h1>
   <div>Open the browser developer tools and check the application and console tabs</div>
   <div>
     <button onclick="setItem()">Set Item</button>
@@ -38,9 +38,9 @@
     <button onclick="getLength()">Get Length</button>
   </div>
 
-  <script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
+  <script src="node_modules/secured-web-storage/dist/secured-web-storage.js"></script>
   <script>
-    var store = new SecureStorageWeb({ name: 'app', type: 'localStorage', secretKey: 'test' });
+    var store = new SecuredWebStorage({ name: 'app', type: 'localStorage', secretKey: 'test' });
 
     function setItem() {
       console.log(store.setItem('key', { a: 12345 }));

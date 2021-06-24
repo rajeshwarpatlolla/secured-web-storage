@@ -7046,9 +7046,9 @@ schema-utils@^2.0.0, schema-utils@^2.5.0, schema-utils@^2.6.5, schema-utils@^2.6
     ajv "^6.12.4"
     ajv-keywords "^3.5.2"
 
-secure-storage-web@0.1.0:
+secured-web-storage@0.1.0:
   version "0.1.0"
-  resolved "https://registry.yarnpkg.com/secure-storage-web/-/secure-storage-web-0.1.0.tgz#18d57e8a9561b9e4ef8bb77a40159949524d8c7d"
+  resolved "https://registry.yarnpkg.com/secured-web-storage/-/secured-web-storage-0.1.0.tgz#18d57e8a9561b9e4ef8bb77a40159949524d8c7d"
   integrity sha512-nm1zaCuy5Gbq0WV89eEc8XmlX9ACVNZ6LK/XLwy6lI8bj5lLKEYcqCA3ZeUTfYao1Pgmx78GfVwA6NdirX+f5w==
   dependencies:
     crypto-js "^4.0.0"

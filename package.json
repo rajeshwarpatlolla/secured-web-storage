@@ -1,5 +1,5 @@
 {
-  "name": "secure-storage-web",
+  "name": "secured-web-storage",
   "version": "0.2.0",
   "description": "Secure storage for web applications",
   "main": "dist/index.min.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rajeshwarpatlolla/secure-storage-web.git"
+    "url": "git+https://github.com/rajeshwarpatlolla/secured-web-storage.git"
   },
   "keywords": [
     "web",
@@ -20,9 +20,9 @@
   "author": "rajeshwar.patlolla@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rajeshwarpatlolla/secure-storage-web/issues"
+    "url": "https://github.com/rajeshwarpatlolla/secured-web-storage/issues"
   },
-  "homepage": "https://github.com/rajeshwarpatlolla/secure-storage-web#readme",
+  "homepage": "https://github.com/rajeshwarpatlolla/secured-web-storage#readme",
   "dependencies": {
     "crypto-js": "^4.0.0"
   },

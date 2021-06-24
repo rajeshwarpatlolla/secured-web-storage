@@ -7,7 +7,7 @@ module.exports = {
     // export to AMD, CommonJS, or window
     libraryTarget: 'umd',
     // the name exported to window
-    library: 'SecureStorageWeb',
+    library: 'SecuredWebStorage',
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.min.js',
   },

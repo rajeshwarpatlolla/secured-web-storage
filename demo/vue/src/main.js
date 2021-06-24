@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import SecureStorageWeb from 'secure-storage-web';
+import SecuredWebStorage from 'secured-web-storage';
 
 import App from './App.vue';
 
-var store = new SecureStorageWeb({ name: 'test', type: 'localStorage', secretKey: 'test', secure: true });
+var store = new SecuredWebStorage({ name: 'test', type: 'localStorage', secretKey: 'test', secure: true });
 Vue.prototype.store = store;
 Vue.config.productionTip = false;
 

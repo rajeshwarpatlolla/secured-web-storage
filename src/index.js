@@ -1,12 +1,12 @@
 var CryptoJS = require('crypto-js');
 
 var config = {};
-function SecureStorageWeb({ name = 'app', type = 'localStorage', secretKey = 'SECRET_KEY', secure = true }) {
+function SecuredWebStorage({ name = 'app', type = 'localStorage', secretKey = 'SECRET_KEY', secure = true }) {
   config = { name, type, secretKey, secure };
   config.type = config.type === 'localStorage' ? localStorage : sessionStorage;
 }
 
-SecureStorageWeb.prototype.setItem = (name, value) => {
+SecuredWebStorage.prototype.setItem = (name, value) => {
   if (typeof value === 'object') {
     value = JSON.stringify(value);
   } else {
@@ -18,7 +18,7 @@ SecureStorageWeb.prototype.setItem = (name, value) => {
   return config.type.setItem([`${config.name}-${name}`], value);
 };
 
-SecureStorageWeb.prototype.getItem = (name) => {
+SecuredWebStorage.prototype.getItem = (name) => {
   let value = config.type.getItem([`${config.name}-${name}`]);
   if (value) {
     if (config.secure) {
@@ -39,11 +39,11 @@ SecureStorageWeb.prototype.getItem = (name) => {
   return value;
 };
 
-SecureStorageWeb.prototype.deleteItem = (name) => {
+SecuredWebStorage.prototype.deleteItem = (name) => {
   return config.type.removeItem([`${config.name}-${name}`]);
 };
 
-SecureStorageWeb.prototype.getAllItems = () => {
+SecuredWebStorage.prototype.getAllItems = () => {
   let data = null;
   if (config.secure) {
     data = Object.keys(config.type).reduce((obj, str) => {
@@ -79,11 +79,11 @@ SecureStorageWeb.prototype.getAllItems = () => {
   return data;
 };
 
-SecureStorageWeb.prototype.deleteAllItems = () => {
+SecuredWebStorage.prototype.deleteAllItems = () => {
   return config.type.clear();
 };
 
-SecureStorageWeb.prototype.getAllKeys = () => {
+SecuredWebStorage.prototype.getAllKeys = () => {
   const data = Object.keys(config.type).reduce((obj, str) => {
     obj[str] = config.type.getItem(`${config.name}-${str}`);
     return obj;
@@ -91,7 +91,7 @@ SecureStorageWeb.prototype.getAllKeys = () => {
   return Object.keys(data).filter((k) => k.indexOf(config.name) === 0);
 };
 
-SecureStorageWeb.prototype.getLength = () => {
+SecuredWebStorage.prototype.getLength = () => {
   const data = Object.keys(config.type).reduce((obj, str) => {
     obj[str] = config.type.getItem(`${config.name}-${str}`);
     return obj;
@@ -99,4 +99,4 @@ SecureStorageWeb.prototype.getLength = () => {
   return Object.keys(data).filter((k) => k.indexOf(config.name) === 0).length;
 };
 
-module.exports = SecureStorageWeb;
+module.exports = SecuredWebStorage;

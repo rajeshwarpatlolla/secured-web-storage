@@ -1,23 +1,23 @@
-# secure-storage-web
+# secured-web-storage
 The data will be stored using [CryptoJS](https://github.com/brix/crypto-js) AES (Advanced Encryption Standard)
 ## A secure storage for web application
 
-![npm](https://img.shields.io/npm/v/secure-storage-web?color=brightgreen&style=plastic) ![MIT](https://img.shields.io/npm/l/secure-storage-web?color=brightgreen&style=plastic)
+![npm](https://img.shields.io/npm/v/secured-web-storage?color=brightgreen&style=plastic) ![MIT](https://img.shields.io/npm/l/secured-web-storage?color=brightgreen&style=plastic)
 
 ## Demo
 
-[You can see the demo here](https://rajeshwarpatlolla.github.io/secure-storage-web/demo/)
+[You can see the demo here](https://rajeshwarpatlolla.github.io/secured-web-storage/demo/)
 
 ## Installation
 
 ```javascript
-npm install secure-storage-web --save
+npm install secured-web-storage --save
 ```
 
 or
 
 ```javascript
-yarn add secure-storage-web --save
+yarn add secured-web-storage --save
 ```
 
 ## Usage
@@ -25,13 +25,13 @@ yarn add secure-storage-web --save
 ### In Web application
 In side `index.html`
 ```javascript
-<script src="node_modules/secure-storage-web/dist/secure-storage-web.js"></script>
+<script src="node_modules/secured-web-storage/dist/secured-web-storage.js"></script>
 ````
 
 In `js` file where you want to use this package
 ```javascript
 var config = { name: 'test', type: 'localStorage', secretKey: 'test' };
-var store = new SecureStorageWeb(config);
+var store = new SecuredWebStorage(config);
 
 store.setItem('key1', { a: 12345 });
 
@@ -42,10 +42,10 @@ store.getItem('key1');
 In your `main.js` file
 
 ```javascript
-import SecureStorageWeb from 'secure-storage-web';
+import SecuredWebStorage from 'secured-web-storage';
 
 var config = { name: 'test', type: 'localStorage', secretKey: 'test', secure: true };
-var store = new SecureStorageWeb(config);
+var store = new SecuredWebStorage(config);
 
 Vue.prototype.store = store;
 ```
@@ -70,7 +70,7 @@ Option  | Type | Default Value | Description
 #### Usage of configuration options
 ```javascript
 var config = { name: 'test', type: 'localStorage', secretKey: 'test', secure: true };
-var store = new SecureStorageWeb(config);
+var store = new SecuredWebStorage(config);
 ````
 
 ## Methods
@@ -86,10 +86,10 @@ getAllKeys | `getAllKeys()` | Get all the keys stored.
 getLength | `getLength()` | Get the length of items stored.
 
 ## npm package
-You can find npm registry link [here](https://www.npmjs.com/package/secure-storage-web)
+You can find npm registry link [here](https://www.npmjs.com/package/secured-web-storage)
 ## License
 
-[MIT](https://github.com/rajeshwarpatlolla/secure-storage-web/blob/master/LICENSE.md)
+[MIT](https://github.com/rajeshwarpatlolla/secured-web-storage/blob/master/LICENSE.md)
 
 ## Release Notes
 ### v0.0.1
