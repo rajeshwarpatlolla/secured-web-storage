@@ -110,6 +110,9 @@ You can find npm registry link [here](https://www.npmjs.com/package/secured-web-
 - Keys will be fetched based on the configuration
 - Updated Readme with configuration options and methods
 
+### v0.3.0
+- Pacakge name modified to secured-web-storage
+
 ## Contact
 
 - Gmail : rajeshwar.patlolla@gmail.com
